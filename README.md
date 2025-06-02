@@ -1,51 +1,163 @@
 <!---
 {
-  "depends_on": [],
+  "id": "2d349b37-ef59-4353-87e2-33896c7d0064",
+  "depends_on": ["00650b50-14de-471d-a347-246f47ffadde"],
   "author": "Stephan Bökelmann",
-  "first_used": "2025-03-17",
-  "keywords": ["learning", "exercises", "education", "practice"]
+  "first_used": "2025-06-02",
+  "keywords": ["LaTeX", "mathematics", "equations", "vim", "math mode"]
 }
 --->
 
-# Learning Through Exercises
+# Writing Mathematics in LaTeX
 
-## Introduction
-Learning by doing is one of the most effective methods to acquire new knowledge and skills. Rather than passively consuming information, actively engaging in problem-solving fosters deeper understanding and long-term retention. By working through structured exercises, students can grasp complex concepts in a more intuitive and applicable way. This approach is particularly beneficial in technical fields like programming, mathematics, and engineering.
+> In this exercise you will learn how to typeset mathematical expressions in LaTeX using inline and display math environments. Furthermore we will explore how to write fractions, superscripts, subscripts, square roots, and basic mathematical symbols.
+
+### Introduction
+
+One of LaTeX's most famous strengths is its capability to produce beautiful mathematical typesetting. Originally designed with scientific and mathematical publications in mind, LaTeX provides precise control over mathematical notation, enabling users to present formulas and equations with professional clarity.
+
+Mathematics in LaTeX is written inside **math mode**, which differs from regular text mode. Entering math mode tells LaTeX to interpret special symbols and commands according to mathematical rules. There are two primary ways to enter math mode:
+
+* **Inline math**: place math inside single dollar signs `$ ... $` to embed it within a paragraph.
+* **Display math**: use either `\[ ... \]` or the `equation` environment to center and emphasize standalone equations.
+
+LaTeX provides a wide range of commands for mathematical symbols and operations:
+
+* Superscripts and subscripts using `^` and `_`
+* Fractions using `\frac{numerator}{denominator}`
+* Square roots with `\sqrt{}`
+* Greek letters like `\alpha`, `\beta`, `\gamma`, etc.
+* Operators like `\sum`, `\int`, and relational symbols such as `\leq`, `\geq`, `\neq`
+
+Mastering math mode early opens the door to advanced topics like aligned equations, theorem environments, and complex mathematical structures required in scientific and technical writing. In this exercise, you will practice by writing both simple and moderately complex mathematical expressions.
 
 ### Further Readings and Other Sources
-- [The Importance of Practice in Learning](https://www.sciencedirect.com/science/article/pii/S036013151300062X)
-- "The Art of Learning" by Josh Waitzkin
-- [How to Learn Effectively: 5 Key Strategies](https://www.edutopia.org/article/5-research-backed-learning-strategies)
+
+* [Overleaf: Mathematical Expressions](https://www.overleaf.com/learn/latex/Mathematical_expressions)
+* [LaTeX Wikibook - Mathematics](https://en.wikibooks.org/wiki/LaTeX/Mathematics)
+* [YouTube - LaTeX Math Typesetting Tutorial](https://www.youtube.com/watch?v=8SbKEP-mb6Q)
+* [The Not So Short Introduction to LaTeX (Math Section)](https://tobi.oetiker.ch/lshort/lshort.pdf)
+
+---
 
 ## Tasks
-1. **Write a Summary**: Summarize the concept of "learning by doing" in 3-5 sentences.
-2. **Example Identification**: List three examples from your own experience where learning through exercises helped you understand a topic better.
-3. **Create an Exercise**: Design a simple exercise for a topic of your choice that someone else could use to practice.
-4. **Follow an Exercise**: Find an online tutorial that includes exercises and complete at least two of them.
-5. **Modify an Existing Exercise**: Take a basic problem from a textbook or online course and modify it to make it slightly more challenging.
-6. **Pair Learning**: Explain a concept to a partner and guide them through an exercise without giving direct answers.
-7. **Review Mistakes**: Look at an exercise you've previously completed incorrectly. Identify why the mistake happened and how to prevent it in the future.
-8. **Time Challenge**: Set a timer for 10 minutes and try to solve as many simple exercises as possible on a given topic.
-9. **Self-Assessment**: Create a checklist to evaluate your own performance in completing exercises effectively.
-10. **Reflect on Progress**: Write a short paragraph on how this structured approach to exercises has influenced your learning.
 
-<details>
-  <summary>Tip for Task 5</summary>
-  Try making small adjustments first, such as increasing the difficulty slightly or adding an extra constraint.
-</details>
+### Task 0: Create a New LaTeX File
+
+Open Vim and create a new file:
+
+```bash
+vim math.tex
+```
+
+Insert the following base structure:
+
+```latex
+\documentclass{article}
+\begin{document}
+
+Your content goes here.
+
+\end{document}
+```
+
+Save and exit Vim.
+
+### Task 1: Write Inline Math Expressions
+
+Replace `Your content goes here.` with:
+
+```latex
+\section{Inline Math}
+
+The Pythagorean theorem states that $a^2 + b^2 = c^2$.
+The quadratic formula is given by $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.
+```
+
+Compile using:
+
+```bash
+pdflatex math.tex
+```
+
+Verify that the formulas appear inline within the text.
+
+### Task 2: Write Displayed Equations Using $ $
+
+Add a new section below:
+
+```latex
+\section{Displayed Equations}
+
+Here is the Pythagorean theorem displayed:
+
+\[
+a^2 + b^2 = c^2
+\]
+
+And the quadratic formula:
+
+\[
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+\]
+```
+
+Recompile and check that these are centered and properly formatted.
+
+### Task 3: Use the Equation Environment with Automatic Numbering
+
+Add another section:
+
+```latex
+\section{Numbered Equations}
+
+\begin{equation}
+E = mc^2
+\end{equation}
+
+\begin{equation}
+\sum_{i=1}^{n} i = \frac{n(n+1)}{2}
+\end{equation}
+```
+
+Recompile and verify that LaTeX numbers the equations automatically.
+
+### Task 4: Insert Greek Letters and Operators
+
+Extend your file with:
+
+```latex
+\section{Greek Letters and Operators}
+
+Euler's formula:
+\[
+e^{i\pi} + 1 = 0
+\]
+
+An integral:
+\[
+\int_{0}^{\infty} e^{-x} dx = 1
+\]
+
+A summation:
+\[
+\sum_{k=1}^{10} k = 55
+\]
+```
+
+Compile and verify correct rendering.
+
+---
 
 ## Questions
-1. What are the main benefits of learning through exercises compared to passive learning?
-2. How do exercises improve long-term retention?
-3. Can you think of a subject where learning through exercises might be less effective? Why?
-4. What role does feedback play in learning through exercises?
-5. How can self-designed exercises improve understanding?
-6. Why is it beneficial to review past mistakes in exercises?
-7. How does explaining a concept to someone else reinforce your own understanding?
-8. What strategies can you use to stay motivated when practicing with exercises?
-9. How can timed challenges contribute to learning efficiency?
-10. How do exercises help bridge the gap between theory and practical application?
+
+1. What is the difference between inline and display math in LaTeX?
+2. How do you write superscripts and subscripts?
+3. What is the purpose of the `equation` environment compared to `\[ \]`?
+4. How does LaTeX handle automatic equation numbering?
+
+---
 
 ## Advice
-Practice consistently and seek out diverse exercises that challenge different aspects of a topic. Combine exercises with reflection and feedback to maximize your learning efficiency. Don't hesitate to adapt exercises to fit your own needs and ensure that you're actively engaging with the material, rather than just going through the motions.
 
+Mathematical typesetting is where LaTeX truly shines. While the syntax may feel unfamiliar at first, the consistency and precision it provides are unmatched. Focus on understanding how math mode operates differently from text mode. Practice writing small formulas and gradually increase complexity. Use this knowledge to build documents that not only contain correct content but are also professionally formatted for publication and presentations. In the long run, mastering LaTeX math will save you time and frustration when preparing technical or academic documents.
