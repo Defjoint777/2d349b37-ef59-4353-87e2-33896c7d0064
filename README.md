@@ -152,10 +152,13 @@ Compile and verify correct rendering.
 ## Questions
 
 1. What is the difference between inline and display math in LaTeX?
-2. How do you write superscripts and subscripts?
-3. What is the purpose of the `equation` environment compared to `\[ \]`?
-4. How does LaTeX handle automatic equation numbering?
-
+   Its easier to read and looks better organized
+3. How do you write superscripts and subscripts?
+   x^2 or x^{10}, x_1 or x_{10}
+5. What is the purpose of the `equation` environment compared to `\[ \]`?
+   with equation our formel gets number like (1), \[\...\\] not. 
+7. How does LaTeX handle automatic equation numbering?
+  when the file get compiled, compiler just counts equation elements and they get enumerated.
 ---
 
 ## Advice
